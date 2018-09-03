@@ -1,5 +1,7 @@
 # gradle-dependency-analyze
 
+This is a fork of [wfhartford/gradle-dependency-analyze](https://github.com/gchq/gradle-dependency-analyze.git) modified to allow it to work with Java 10.
+
 [![Download](https://api.bintray.com/packages/wesley/maven/gradle-dependency-analyze/images/download.svg) ](https://bintray.com/wesley/maven/gradle-dependency-analyze/_latestVersion)
 [![Build Status](https://travis-ci.org/wfhartford/gradle-dependency-analyze.svg?branch=master)](https://travis-ci.org/wfhartford/gradle-dependency-analyze)
 
