@@ -1,9 +1,21 @@
 # gradle-dependency-analyze
 
-This is a fork of [wfhartford/gradle-dependency-analyze](https://github.com/gchq/gradle-dependency-analyze.git) modified to allow it to work with Java 11.
+This is a fork of [wfhartford/gradle-dependency-analyze](https://github.com/gchq/gradle-dependency-analyze.git) modified to allow it to work with Java 10. The maven artefacts are published on Bintray at [bintray.com/stroom/stroom/gradle-dependency-analyze](https://bintray.com/stroom/stroom/gradle-dependency-analyze).
 
-[![Download](https://api.bintray.com/packages/wesley/maven/gradle-dependency-analyze/images/download.svg) ](https://bintray.com/wesley/maven/gradle-dependency-analyze/_latestVersion)
-[![Build Status](https://travis-ci.org/wfhartford/gradle-dependency-analyze.svg?branch=master)](https://travis-ci.org/wfhartford/gradle-dependency-analyze)
+To use this plugin in your gradle build add the following buildscript repository;
+
+``` groovy
+buildscript {
+    repositories {
+        maven { url "https://dl.bintray.com/stroom/stroom" }
+    }
+    dependencies {
+        classpath 'stroom:gradle-dependency-analyze:v2.2.4'
+    }
+}
+```
+
+---
 
 Dependency analysis plugin for gradle.
 
@@ -51,7 +63,7 @@ This plugin adds four configurations which may be used to define dependencies wh
 * `permitUsedUndeclared`
 * `permitTestUsedUndeclared`
 
-Adding dependencies to `permitUnusedDeclared` or `permitTestUnusedDeclared` causes the dependency analyzer to ignore cases where the dependencies are declared but not used. Adding dependencies to `permitUsedUndeclared` or `permitTestUsedUndeclared` causes the dependency analyzer to ignore cases where the dependencies used but not declared. 
+Adding dependencies to `permitUnusedDeclared` or `permitTestUnusedDeclared` causes the dependency analyzer to ignore cases where the dependencies are declared but not used. Adding dependencies to `permitUsedUndeclared` or `permitTestUsedUndeclared` causes the dependency analyzer to ignore cases where the dependencies used but not declared.
 
 ## Examples
 Using these configurations to allow exceptions to the rules is as simple as adding a dependency to your project. The snippet below will provide a compile-time dependency on the JSP API, but the plugin will not complain if it is not used.
