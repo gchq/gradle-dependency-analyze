@@ -24,9 +24,12 @@ ext.getPropertyOrDefault = { propName, defaultValue ->
     return val;
 }
 
-//group = 'ca.cutterslade.gradle'
+ext.buildVersion = getPropertyOrDefault('version', 'SNAPSHOT') 
+
+println "Build version [$buildVersion]"
+
 group = 'stroom'
-version = getPropertyOrDefault('version', 'SNAPSHOT')
+version = buildVersion
 
 repositories {
   jcenter()
@@ -110,10 +113,10 @@ bintray {
     issueTrackerUrl = 'https://github.com/gchq/gradle-dependency-analyze/issues'
     vcsUrl = 'https://github.com/gchq/gradle-dependency-analyze.git'
     version {
-      name = "${version}"
-      desc = "gradle-dependency-analyze-${version}"
+      name = "${buildVersion}"
+      desc = "gradle-dependency-analyze-${buildVersion}"
       released = new Date()
-      vcsTag = "${version}"
+      vcsTag = "${buildVersion}"
       gpg {
         //Bintray will self-sign the files
         sign = true //Determines whether to GPG sign the files. The default is false
