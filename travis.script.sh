@@ -44,6 +44,6 @@ fi
 
 echo -e "extraBuildArgs:      [${GREEN}${extraBuildArgs}${NC}]"
 
-./gradlew -Pversion=$TRAVIS_TAG clean build dist ${extraBuildArgs}
+./gradlew -Pversion=$TRAVIS_TAG clean build ${extraBuildArgs}
 
 exit 0
