@@ -51,6 +51,19 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
   from javadoc.destinationDir
 }
 
+def pomConfig = {
+    licenses {
+        license {
+            name "The Apache Software License, Version 2.0"
+            url "http://www.apache.org/licenses/LICENSE-2.0.txt"
+            distribution "repo"
+        }
+    }
+    scm {
+        url "https://github.com/stroom/gradle-dependency-analyze"
+    }
+}
+
 publishing {
   publications {
     mavenJava(MavenPublication) {
@@ -60,6 +73,11 @@ publishing {
       version "${version}"
       artifact javadocJar {classifier 'javadoc'}
       artifact sourcesJar {classifier 'sources'}
+      pom.withXml {
+          def root = asNode()
+          root.appendNode('name', project.name)
+          root.children().last() + pomConfig
+      }
     }
   }
 
@@ -91,16 +109,16 @@ bintray {
     websiteUrl = 'https://github.com/gchq/gradle-dependency-analyze'
     issueTrackerUrl = 'https://github.com/gchq/gradle-dependency-analyze/issues'
     vcsUrl = 'https://github.com/gchq/gradle-dependency-analyze.git'
-    version {
-      name = "${version}"
-      desc = "gradle-dependency-analyze-${version}"
-      released = new Date()
-      vcsTag = "${version}"
-      gpg {
-        //Bintray will self-sign the files
-        sign = true //Determines whether to GPG sign the files. The default is false
-      }
-    }
+    //version {
+      //name = "${version}"
+      //desc = "gradle-dependency-analyze-${version}"
+      //released = new Date()
+      //vcsTag = "${version}"
+      //gpg {
+        ////Bintray will self-sign the files
+        //sign = true //Determines whether to GPG sign the files. The default is false
+      //}
+    //}
   }
 }
 
