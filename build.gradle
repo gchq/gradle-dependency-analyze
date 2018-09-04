@@ -55,6 +55,9 @@ publishing {
   publications {
     mavenJava(MavenPublication) {
       from components.java
+      groupId "${group}"
+      artifactId project.name
+      version "${version}"
       artifact javadocJar {classifier 'javadoc'}
       artifact sourcesJar {classifier 'sources'}
     }
@@ -82,7 +85,7 @@ bintray {
   pkg {
     userOrg = 'stroom'
     repo = 'stroom'
-    name = 'gradle-dependency-analyze'
+    name = project.name
     licenses = ['Apache-2.0']
     desc = 'Dependency analysis plugin for gradle'
     websiteUrl = 'https://github.com/gchq/gradle-dependency-analyze'
