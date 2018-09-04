@@ -80,9 +80,9 @@ bintray {
 
   publications = ['mavenJava']
   pkg {
-    repo = 'stroom'
-    name = project.name
     userOrg = 'stroom'
+    repo = 'stroom'
+    name = 'gradle-dependency-analyze'
     licenses = ['Apache-2.0']
     desc = 'Dependency analysis plugin for gradle'
     websiteUrl = 'https://github.com/gchq/gradle-dependency-analyze'
