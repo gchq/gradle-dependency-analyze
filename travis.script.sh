@@ -13,7 +13,7 @@ YELLOW='\033[1;33m'
 BLUE='\033[1;34m'
 NC='\033[0m' # No Colour 
 
-#establish what version of stroom we are building
+#establish what version we are building
 if [ -n "$TRAVIS_TAG" ]; then
     #Tagged commit so use that as our version, e.g. v6.0.0
     VERSION="${TRAVIS_TAG}"
@@ -29,7 +29,7 @@ echo -e "TRAVIS_BRANCH:       [${GREEN}${TRAVIS_BRANCH}${NC}]"
 echo -e "TRAVIS_TAG:          [${GREEN}${TRAVIS_TAG}${NC}]"
 echo -e "TRAVIS_PULL_REQUEST: [${GREEN}${TRAVIS_PULL_REQUEST}${NC}]"
 echo -e "TRAVIS_EVENT_TYPE:   [${GREEN}${TRAVIS_EVENT_TYPE}${NC}]"
-echo -e "STROOM_VERSION:      [${GREEN}${STROOM_VERSION}${NC}]"
+echo -e "VERSION:             [${GREEN}${VERSION}${NC}]"
 
 #Normal commit/PR/tag build
 extraBuildArgs=""
