@@ -70,7 +70,7 @@ publishing {
       from components.java
       groupId "${group}"
       artifactId project.name
-      version "${version}"
+      //version "${version}"
       artifact javadocJar {classifier 'javadoc'}
       artifact sourcesJar {classifier 'sources'}
       pom.withXml {
@@ -109,16 +109,16 @@ bintray {
     websiteUrl = 'https://github.com/gchq/gradle-dependency-analyze'
     issueTrackerUrl = 'https://github.com/gchq/gradle-dependency-analyze/issues'
     vcsUrl = 'https://github.com/gchq/gradle-dependency-analyze.git'
-    //version {
-      //name = "${version}"
-      //desc = "gradle-dependency-analyze-${version}"
-      //released = new Date()
-      //vcsTag = "${version}"
-      //gpg {
-        ////Bintray will self-sign the files
-        //sign = true //Determines whether to GPG sign the files. The default is false
-      //}
-    //}
+    version {
+      name = "${version}"
+      desc = "gradle-dependency-analyze-${version}"
+      released = new Date()
+      vcsTag = "${version}"
+      gpg {
+        //Bintray will self-sign the files
+        sign = true //Determines whether to GPG sign the files. The default is false
+      }
+    }
   }
 }
 
