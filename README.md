@@ -1,6 +1,6 @@
 # gradle-dependency-analyze
 
-This is a fork of [wfhartford/gradle-dependency-analyze](https://github.com/gchq/gradle-dependency-analyze.git) modified to allow it to work with Java 10. The maven artefacts are published on Bintray at [bintray.com/stroom/stroom/gradle-dependency-analyze](https://bintray.com/stroom/stroom/gradle-dependency-analyze).
+This is a fork of [wfhartford/gradle-dependency-analyze](https://github.com/gchq/gradle-dependency-analyze.git) modified to allow it to work with Java 11. The maven artefacts are published on Bintray at [bintray.com/stroom/stroom/gradle-dependency-analyze](https://bintray.com/stroom/stroom/gradle-dependency-analyze).
 
 To use this plugin in your gradle build add the following buildscript repository;
 
