@@ -24,7 +24,7 @@ ext.getPropertyOrDefault = { propName, defaultValue ->
     return val;
 }
 
-ext.buildVersion = getPropertyOrDefault('version', 'SNAPSHOT') 
+ext.buildVersion = getPropertyOrDefault('version', 'SNAPSHOT')
 
 println "Build version [$buildVersion]"
 
@@ -38,7 +38,7 @@ repositories {
 dependencies {
   compile gradleApi()
   compile localGroovy()
-  compile 'org.apache.maven.shared:maven-dependency-analyzer:1.10'
+  compile 'org.apache.maven.shared:maven-dependency-analyzer:1.11.1'
 }
 
 sourceCompatibility = JavaVersion.VERSION_11
